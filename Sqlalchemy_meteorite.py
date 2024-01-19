@@ -7,6 +7,8 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from flask import Flask, jsonify
+from flask import Flask, render_template
+from flask_cors import CORS
 
 #database setup
 database = 'meteorite'
@@ -36,6 +38,7 @@ print(avg_mass_df)
 #flask setup
     
 app = Flask(__name__)
+CORS(app)
 
 #flask routes
 
@@ -53,7 +56,7 @@ def homepage():
 def mass_graph():
     class_mean_mass = mass_df.groupby('class')['mass'].mean().reset_index()
     top_50_classes = class_mean_mass.nlargest(50, 'mass')
-    top_50_dict = top_50_classes.to_dict('records')
+    top_50_dict = top_50_classes.to_dict('list')
     
     return jsonify(top_50_dict)
 

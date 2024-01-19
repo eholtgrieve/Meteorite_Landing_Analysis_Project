@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <style>
+        </style>
+        <title>Meteorite Strikes</title>
+    </head>
+    <body>
+    <!-- HEADER -->
+      <div class="title">
+        <div>Meteorite Strikes</div>
+        <div class="scroll1"> </div>
+        <div class="scroll2" data-toggle="tooltip"
+             title = "Meteorites' fall were not observed"
+             data-placement="top"></div>
+        <div class="scroll3" data-toggle="tooltip"
+             title = "Meteorites' fall were observed"
+             data-placement="top"> </div>
+      </div>
+    <!--Use bootstrap grid system to separate map and info box-->
+    <div class="container-fluid page">
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="carousel">
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+            <ul class="nav navbar-nav">
+            <li><a href="#skip" class="btn" id="1"><b>Skip Intro</b></a></li>
+            <li><a href="#info" class="btn" id="2"><b>Info</b></a></li>
+            <li><a href="#view" class="btn" id="3"><b>Population Density</b></a></li>
+            <li><a href="#data" class="btn" id="4"><b>Data</b></a></li>
+            </ul>
+            </div>
+          </nav>
+          <div id="D1" class = "buttons">
+          <p>This skips a beautiful animation that renders the strikes of 30,000
+          meteorites on the world map starting from the year 860 to 2013.<br><br>
+          Reload the page to enjoy the animation.
+          </div>
+          </p>
+          <div id="D2" class = "buttons">
+          <h4>What are Meteorites?</h4>
+          <p>A meteorite is a meteoroid (a piece of an asteroid or comet) that 
+          survives the passage through the Earth's atmosphere and lands on the earth.
+          <br><br>
+          </p>
+          <h4>How often do Meteorites strike?</h4>
+          <p>Almost everyday our planet is bombarded with tons of small particles and dust
+          some of which our atmosphere protects our planet from.
+          <br><br>
+          About once a year, an automobile-sized asteroid hits Earth's atmosphere, 
+          creates an impressive fireball, and burns up before reaching the surface.
+          <br><br>
+          Every 2,000 years or so, a meteoroid the size of a football field hits 
+          Earth and causes significant damage to the area.
+          <br><br>
+          Only once every few million years, an object large enough to threaten 
+          Earth's civilization comes along. Impact craters on Earth, the moon and 
+          other planetary bodies are evidence of these occurrences.
+          <br><br>
+          It is believed that anything larger than half mile in diameter could 
+          have worldwide effects.
+          <br><br>
+          Weighing in at 66 tons, the largest known meteorite found is 
+          <a href="http://geology.com/records/largest-meteorite/">Hoba</a> in 
+          Namibia, Africa.
+          </p>
+          
+          <ul>
+          </ul>
+          </p>
+        </div>
+        <div id="D3" class = "buttons">
+        <h4>Population Density View</h4>
+        <p>While the first view illustrates the meteorite strikes on the world map, 
+        this view gives an emphasis on the population density of those 
+        regions to visualize the effect of meteorite strikes on human life.<br><br>
+        This view lightens the areas of the world with intensity proportional to
+        the population. Antarctica is an exception as based on the scale of 
+        population density, it should not even show up. Although it currently has a 
+        floating research population it has imputed in the map for the sake of sanity.<br><br> 
+        The data for population density has been procured from the 
+        <a href="https://data.worldbank.org/indicator/EN.POP.DNST">World Bank</a> website and 
+        and the numbers are from the year 2016. 
+        While the numbers might not be indicative of the actual population 
+        density at the time of meteorite strike, this view attempts to analyze a
+        new aspect of the visualization - whether we can draw a parallel between
+        the population density and the number of meteorites found.
+        Moreover, this view could also provide caution to countries where a meteorite
+        strike is expected.
+        </p>
+        </div>
+        <div id="D4" class = "buttons">
+        <h4>About the Data</h4>
+        <p>The primary data used in this visualization comes from 
+        NASA's Data Portal, and is based on The Meteoritical Society's 
+        Meteoritical Bulletin Database (this latter database provides additional 
+        information such as meteorite images, links to primary sources, etc.). 
+        </p>
+        <h4>Data Sources</h4>
+        <ul>
+        <li><a href="https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh">
+        NASA's Data Portal</a>
+        </li>
+        <li><a href="https://data.worldbank.org/indicator/EN.POP.DNST">
+        The World Bank</a>
+        </li>
+        </ul>
+        <h4>Important Notes</h4>
+        <h4>Technology</h4>
+        <p>The visualization is created using, HTML, D3 and JavaScript.<p>
+        </div>
+      </div>
+    </div>
+ </div>
+
+  
