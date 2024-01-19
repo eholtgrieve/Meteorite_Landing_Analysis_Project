@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
 import config
+import pandas as pd
 import sqlalchemy 
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
-from flask import Flask
+from flask import Flask, jsonify
 
 #database setup
 database = 'meteorite'
@@ -19,6 +20,15 @@ connection = engine.connect()
 query = sqlalchemy.text("SELECT * FROM meteorites")
 data = engine.execute(query)
 
+meteorites_df = pd.read_sql_query('select * from "meteorites"',con=engine)
+
+mass_df = meteorites_df.loc[:, ["name","class", "mass"]]
+
+
+#finding average of mass per type
+avg_mass = mass_df.groupby("class")
+avg_mass_df = avg_mass["mass"].mean()
+print(avg_mass_df)
 
 #for record in data:
     #print(record)
@@ -41,18 +51,24 @@ def homepage():
 
 @app.route("/api/v1.0/mass-graph")
 def mass_graph():
+    class_mean_mass = mass_df.groupby('class')['mass'].mean().reset_index()
+    top_50_classes = class_mean_mass.nlargest(50, 'mass')
+    top_50_dict = top_50_classes.to_dict('records')
     
-    
-    return ()
+    return jsonify(top_50_dict)
 
 @app.route("/api/v1.0/yearly-graph")
 def year_graph():
-
-    return()
+    year_count = meteorites_df.groupby("year")
+    year_count = year_count["name"].count()
+    year_count = year_count.sort_index()
+    year_count_dict = year_count.to_dict()
+    
+    return jsonify(year_count_dict)
 
 @app.route("/api/v1.0/landings-map")
 def landings_map():
-
+    
     return()
 
 #runs the flask api in browser
