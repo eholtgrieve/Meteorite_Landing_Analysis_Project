@@ -120,6 +120,7 @@ met.selectAll( "path" )
     d3.select("#fall").text(d.properties.fall);
     d3.select("#year").text(d.properties.year);
   });
+
   // .on("mouseout", function(d){
   //   d3.select("").text("");
   // })
@@ -167,6 +168,3 @@ let trace1 = {
 
 
 });
-
-
-  
