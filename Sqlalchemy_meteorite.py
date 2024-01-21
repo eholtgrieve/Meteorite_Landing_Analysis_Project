@@ -3,6 +3,7 @@
 import config
 import pandas as pd
 import sqlalchemy 
+import json
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
@@ -24,13 +25,14 @@ data = engine.execute(query)
 
 meteorites_df = pd.read_sql_query('select * from "meteorites"',con=engine)
 
+map_df = meteorites_df[meteorites_df['year'] >= 1980]
 mass_df = meteorites_df.loc[:, ["name","class", "mass"]]
-
 
 #finding average of mass per type
 avg_mass = mass_df.groupby("class")
 avg_mass_df = avg_mass["mass"].mean()
 print(avg_mass_df)
+
 
 #for record in data:
     #print(record)
@@ -72,7 +74,8 @@ def year_graph():
 @app.route("/api/v1.0/landings-map")
 def landings_map():
     
-    return()
+    map_dict = map_df.to_dict(orient='records')
+    return jsonify(map_dict)
 
 #runs the flask api in browser
 if __name__ == '__main__':
