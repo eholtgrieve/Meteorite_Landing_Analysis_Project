@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+	<title>Meteorite Landings</title>
+
+	<link href="style.css" rel="stylesheet" type="text/css">
+
+
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="//unpkg.com/topojson@3/dist/topojson.min.js"></script>
+    <script src="/d3-geomap/d3-geomap.min.js"></script>
+
+</head>
+<body>
+<h1 align="center"> Meteorite Landings</h1>
+
+	<div class="container">
+		<div id="Chart1" style="float: left; width: 60%">
+			<div id="Map" style="float: left; width: 80%";>
+				<script src="world3.js"></script>
+				<script src="met3.js"></script>
+				<script type="text/javascript" src="meteorite_0121.js"></script>
+                
+			</div>
+            <div id="plot"></div>
+			<div id="List" style="float: left; width: 20%";>
+    			<ul style="list-style-type:none">
+      				<li id="name"></li>
+      				<li id="id"></li>
+      				<li id="nametype"></li>
+      				<li id="class"></li>
+      				<li id="mass"></li>
+      				<li id="fall"></li>
+      				<li id="year"></li>
+    			</ul>
+  			</div>
+		</div>
+		
+ <!--Use bootstrap grid system to separate map and info box-->
+    <div class="container-fluid page">
+      <div class="row">
+        <div class="col-xs-4">
+          
+          <div id="D2" class = "buttons">
+          <h4>What are Meteorites?</h4>
+          <p>A meteorite is a meteoroid (a piece of an asteroid or comet) that 
+          survives the passage through the Earth's atmosphere and lands on the earth.
+          <br><br>
+          </p>
+          <h4>How often do Meteorites strike?</h4>
+          <p>Almost everyday our planet is bombarded with tons of small particles and dust
+          some of which our atmosphere protects our planet from.
+          <br><br>
+          About once a year, an automobile-sized asteroid hits Earth's atmosphere, 
+          creates an impressive fireball, and burns up before reaching the surface.
+          <br><br>
+          Every 2,000 years or so, a meteoroid the size of a football field hits 
+          Earth and causes significant damage to the area.
+          <br><br>
+          Only once every few million years, an object large enough to threaten 
+          Earth's civilization comes along. Impact craters on Earth, the moon and 
+          other planetary bodies are evidence of these occurrences.
+          <br><br>
+          It is believed that anything larger than half mile in diameter could 
+          have worldwide effects.
+          <br><br>
+          Weighing in at 66 tons, the largest known meteorite found is 
+          <a href="http://geology.com/records/largest-meteorite/">Hoba</a> in 
+          Namibia, Africa.
+          </p>
+                 
+        <h4>About the Data</h4>
+        <p>The primary data used in this visualization comes from 
+        NASA's Data Portal, and is based on The Meteoritical Society's 
+        Meteoritical Bulletin Database (this latter database provides additional 
+        information such as meteorite images, links to primary sources, etc.). 
+        </p>
+        <h4>Data Sources</h4>
+        <ul>
+        <li><a href="https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh">
+        NASA's Data Portal</a>
+        </li>
+        <li><a href="https://data.worldbank.org/indicator/EN.POP.DNST">
+        The World Bank</a>
+        </li>
+        </ul>
+        <h4>Technology</h4>
+        <p>The visualization is created using, HTML, D3 and JavaScript.<p>
+        </div>
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+	</div>
+</body>
+</html>
