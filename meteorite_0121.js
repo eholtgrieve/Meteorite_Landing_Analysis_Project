@@ -141,6 +141,63 @@ met.selectAll( "path" )
   	})
   	.text("Show/hide meteorites");
 
+    svg1.append("text")
+  	.attr("x", 50)
+  	.attr("y", 10)
+  	.style("fill", "#A9A9A9")
+  	.style("stroke", "#000000")
+  	.on("click", function(){
+  		var active = mets.active ? false : true,
+  		newOpacity = active ? 0 : 1;
+  		d3.select("#mets").style("opacity", newOpacity);
+  		mets.active = active;
+  	})
+  	.text("Show/hide meteorites");
+
+//---------Legend--------------
+var legend = svg1.selectAll('g.legendEntry')
+    .data(color.range().reverse())
+    .enter()
+    .append('g')
+    .attr('class', 'legendEntry');
+
+legend
+    .append('rect')
+    .attr("x", width-680)
+    .attr("y", function(d, i) {
+       return (1+i) * 20;
+    })
+   .attr("width", 10)
+   .attr("height", 10)
+   .style("stroke", "black")
+   .style("stroke-width", 1)
+   .style("fill", function(d){return d;}); 
+    //the data objects are the fill colors
+
+legend
+    .append('text')
+    .attr("x", width - 665) //leave 5 pixel space after the <rect>
+    .attr("y", function(d, i) {
+       return (1+i) * 20;
+    })
+    .attr("dy", "0.8em") //place text one line *below* the x,y point
+    .text(function(d,i) {
+        var extent = color.invertExtent(d);
+        //extent will be a two-element array, format it however you want:
+        var format = d3.format("0.2f");
+        return format(+extent[0]) + " - " + format(+extent[1]);
+    }); 
+//-----------Legend End------------ 
+
+  
+
+
+
+
+
+
+
+
 // Get the Roadster endpoint
 const url = "http://127.0.0.1:5000/api/v1.0/mass-graph"
 

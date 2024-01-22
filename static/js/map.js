@@ -76,4 +76,3 @@ function massColor(mass) {
     else return "#FF4233";
 }
 
-  
