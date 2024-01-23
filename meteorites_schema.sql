@@ -6,8 +6,9 @@ CREATE TABLE "meteorites" (
     "fall" varchar(10)   NOT NULL,
     "year" integer  NOT NULL,
     "latitude" double precision   NOT NULL,
-    "longitude" double precision   NOT NULL
+    "longitude" double precision   NOT NULL,
+    "hemisphere" varchar(15)
 );
 drop table "meteorites";
 
-select * from meteorites
+select * from meteorites;
