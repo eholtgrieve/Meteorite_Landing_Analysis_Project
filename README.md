@@ -16,13 +16,17 @@ Install the following modules prior to running:
 
 # How To Run:
   1. Install the required modules listed above
-  2. Run the Jupyter Notebook file to obtain the clean data filed
-  3. Create a database in PostgreSQL called 'meteorite'
-  4. Using the table schema in the meteorites_schema.sql file, create a table within the 'meteorite' database
-  5. Import the 'clean_meteorite_data.csv' into the newly created table
-  6. Within the folder, create a config.py file containing the username and password from your PostgreSQL client
-  7. Open the Sqlalchemy_meteorite.py file and run it in the terminal to locally run Flask API
-  8. With the API running, open the 'homepage.html' file in an internet browser and enjoy!
+  2. Clone the repo using the following code:
+     - ```
+       git clone https://github.com/eholtgrieve/Meteorite_Landing_Analysis_Project.git
+       ```
+  4. Run the Jupyter Notebook file to obtain the clean data filed
+  5. Create a database in PostgreSQL called 'meteorite'
+  6. Using the table schema in the meteorites_schema.sql file, create a table within the 'meteorite' database
+  7. Import the 'clean_meteorite_data.csv' into the newly created table
+  8. Within the folder, create a config.py file containing the username and password from your PostgreSQL client
+  9. Open the Sqlalchemy_meteorite.py file and run it in the terminal to locally run Flask API
+  10. With the API running, open the 'homepage.html' file in an internet browser and enjoy!
 
 # Ethical Considerations
 In choosing our dataset, ethical considerations were relatively low as the data did not involve any information related to individuals or potentially sensitive details. 
