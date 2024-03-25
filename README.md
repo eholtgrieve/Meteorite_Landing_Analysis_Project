@@ -1,7 +1,7 @@
 # About The Project
-This project delves into a comprehensive NASA dataset spanning meteorite landings worldwide from  to 2013. 
+This project delves into a comprehensive NASA dataset spanning meteorite landings worldwide from 1980 to 2013. 
 Its aim is to uncover insights such as the correlation between meteorite classes and weight, the geographical patterns of meteorite landings, and the annual count of reported meteorite falls. 
-Leveraging the findings from our exploratory analysis, we have crafted user-friendly visualizations to effectively showcase the data.
+Leveraging the findings from our exploratory analysis, we have crafted user-friendly visualizations to effectively showcase the data. We hope you enjoy the interactive and accessible webpage we've made to learn more about meteorite landings!
 
 
 # Required Modules:
@@ -20,7 +20,7 @@ Install the following modules prior to running:
      - ```
        git clone https://github.com/eholtgrieve/Meteorite_Landing_Analysis_Project.git
        ```
-  4. Run the Jupyter Notebook file to obtain the clean data filed
+  4. Run the 'meteorite_landings_project' Jupyter Notebook file to obtain the clean data file
   5. Create a database in PostgreSQL called 'meteorite'
   6. Using the table schema in the meteorites_schema.sql file, create a table within the 'meteorite' database
   7. Import the 'clean_meteorite_data.csv' into the newly created table
