@@ -1,3 +1,7 @@
+-- use this query if the table 'meteorites' already exists
+drop table "meteorites";
+
+-- this query is used for creating the table 
 CREATE TABLE "meteorites" (
 	id serial PRIMARY KEY,
     "name" varchar(50)   NOT NULL,
@@ -6,9 +10,8 @@ CREATE TABLE "meteorites" (
     "fall" varchar(10)   NOT NULL,
     "year" integer  NOT NULL,
     "latitude" double precision   NOT NULL,
-    "longitude" double precision   NOT NULL,
-    "hemisphere" varchar(15)
+    "longitude" double precision   NOT NULL
 );
-drop table "meteorites";
 
-select * from meteorites;
+-- use this query to check that the data was imported correctly after importing the 'clean_meteorite_data.csv' file 
+select * from meteorites
