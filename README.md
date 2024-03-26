@@ -13,6 +13,7 @@ Install the following modules prior to running:
   - Plotly
   - SKLearn
   - GeoPandas
+  - Leaflet
 
 ## How To Run:
   1. Install the required modules listed above
